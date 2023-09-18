@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <script src="script.js"></script>
+    
     <title>Curriculum Vitae</title>
 </head>
 <body>
@@ -71,13 +71,45 @@
             <h2 class="heading heading-light">Idiomas</h2>
             <div class="idiomas">
               <div class="idioma">
-                <span class="idioma-texto">Inglês</span>
+                <span class="idioma-texto">Inglês
+                  <span class="tooltiptext">Avançado</span>
+                </span>
               </div>
               <div class="idioma">
-                <span class="idioma-texto">Espanhol</span>
+                <span class="idioma-texto">Espanhol
+                  <span class="tooltiptext">Básico</span>
+                </span>
               </div>
               <div class="idioma">
-                <span class="idioma-texto">Italiano</span>
+                <span class="idioma-texto">Italiano
+                  <span class="tooltiptext">Básico</span>
+                </span>
+              </div>
+            </div>
+            <h2 class="heading heading-light">Layout</h2>
+            <div class="layouts">
+              <div class="layout lateral">
+                <span id="seletor">
+                  <label for="colorPicker">Barra Lateral</label>
+                  <input type="color" id="colorPicker" value="#39383a">
+                </span>
+                <div class="buttons">
+                  <button id="applyColor">Aplicar</button> <button id="padrao">Reset</button>   
+                </div>          
+              </div>
+              <div class="layout fonte">
+                <span id="seletor">
+                  <label for="font-size">Tamanho da Fonte:</label>
+                  <select id="font-size">
+                    <option value="2">+2</option>
+                    <option value="1">+1</option>
+                    <option value="0" selected>Normal</option>
+                    <option value="-1">-1</option>
+                    <option value="-2">-2</option>
+                  </select>                  
+                </span>
+                <div class="buttons"> 
+                </div>          
               </div>
             </div>
           </div>
@@ -180,31 +212,31 @@
               <ul class="tecnologias-list">
                 <li class="tecnologias-list-item">
                     Java
-                  <div class="level level-70"></div>
+                  <div class="level level-70 barra"></div>
                 </li>
                 <li class="tecnologias-list-item">
                     Spring
-                  <div class="level level-60"></div>
+                  <div class="level level-60 barra"></div>
                 </li>
                 <li class="tecnologias-list-item">
                     HTML
-                  <div class="level level-70"></div>
+                  <div class="level level-70 barra"></div>
                 </li>
                 <li class="tecnologias-list-item">
                     CSS
-                    <div class="level level-60"></div>
+                    <div class="level level-60 barra"></div>
                 </li>
                 <li class="tecnologias-list-item">
                     JavaScript
-                    <div class="level level-60"></div>
+                    <div class="level level-60 barra"></div>
                 </li>
                 <li class="tecnologias-list-item">
                     TypeScript
-                    <div class="level level-50"></div>
+                    <div class="level level-50 barra"></div>
                 </li>
                 <li class="tecnologias-list-item">
                     Angular
-                    <div class="level level-50"></div>
+                    <div class="level level-50 barra"></div>
                 </li>
               </ul>
             </div>
@@ -217,11 +249,11 @@
                     method="post"
                     autocomplete="off"
                     enctype="multipart/form-data">
-                <label for="nome">Nome:</label>
+                <label for="nome">Nome: <span>*</span></label>
                 <input type="text" name="nome" required>
-                <label for="email">E-mail:</label>
+                <label for="email">E-mail: <span>*</span></label>
                 <input type="email" name="email" required>
-                <label for="mensagem">Mensagem:</label>
+                <label for="mensagem">Mensagem: <span>*</span></label>
                 <textarea name="mensagem" required></textarea>
                 <label for="upload">Arquivo:</label>
                 <input type="file" name="upload" accept=".pdf, image/*">
@@ -233,5 +265,6 @@
           </div>
         </div>
       </div>
+      <script src="script.js"></script>
 </body>
 </html>
