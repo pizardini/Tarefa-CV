@@ -27,40 +27,21 @@ window.addEventListener('scroll', animateTechBars);
 
 animateTechBars();
 
+// function addRequiredAsterisks() {
+//   const requiredFields = document.querySelectorAll('[required]');
+//   requiredFields.forEach(field => {
+//       const label = document.querySelector(`label[for="${field.id}"]`);
+//       if (label) {
+//           const asterisk = document.createElement('span');
+//           asterisk.className = 'required';
+//           asterisk.textContent = ' *';
+//           label.appendChild(asterisk);
+//       }
+//   });
+// }
 
-function addRequiredAsterisks() {
-  const requiredFields = document.querySelectorAll('[required]');
-  requiredFields.forEach(field => {
-      const label = document.querySelector(`label[for="${field.id}"]`);
-      if (label) {
-          const asterisk = document.createElement('span');
-          asterisk.className = 'required';
-          asterisk.textContent = ' *';
-          label.appendChild(asterisk);
-      }
-  });
-}
+// addRequiredAsterisks();
 
-addRequiredAsterisks();
-
-function aplicarCor() {
-  const selectedColor = document.getElementById("colorPicker").value;
-  const barra = document.querySelector('.profile');
-  
-  barra.style.backgroundColor = selectedColor;
-}
-
-document.getElementById('applyColor').addEventListener('click', aplicarCor);
-
-function corPadrao() {
-  const barra = document.querySelector('.profile');
-  
-  barra.style.backgroundColor = "#39383a";
-}
-
-document.getElementById('padrao').addEventListener('click', corPadrao);
-
-// Função para aumentar ou diminuir o tamanho das fontes
 function changeFontSize(value) {
   const elementsWithFontSize = document.querySelectorAll('body, p, h1, h2, h3, h4, h5, h6, a');
 
@@ -71,10 +52,10 @@ function changeFontSize(value) {
   });
 }
 
-// Seletor para o dropdown
+
 const fontSizeSelector = document.getElementById('font-size');
 
-// Event listener para detectar a mudança na seleção
+
 fontSizeSelector.addEventListener('change', function () {
   const selectedValue = fontSizeSelector.value;
   changeFontSize(selectedValue);
