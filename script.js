@@ -8,39 +8,50 @@ function isElementInViewport(el) {
   );
 }
 
-function animateTechBars() {
-  const techItems = document.querySelectorAll('.tecnologias-list-item');
+function isScrolledIntoView(element) {
+  var rect = element.getBoundingClientRect();
+  var elemTop = rect.top;
+  var elemBottom = rect.bottom;
 
-  techItems.forEach((item) => {
-      if (isElementInViewport(item)) {
-          const barra = item.querySelector('.barra');
-          const level = item.querySelector('.level');
-
-          barra.style.width = level.style.width;
-
-          barra.classList.add('animate-barra');
-      }
-  });
+  return (elemTop <= window.innerHeight) && (elemBottom >= 0);
 }
 
-window.addEventListener('scroll', animateTechBars);
+function animateProgressBar(progressBar) {
+  var progressBarWidth = 0;
+  var targetWidth = progressBar.getAttribute("aria-valuenow");
 
-animateTechBars();
+  console.log(progressBar.getAttribute("aria-valuenow"));
 
-// function addRequiredAsterisks() {
-//   const requiredFields = document.querySelectorAll('[required]');
-//   requiredFields.forEach(field => {
-//       const label = document.querySelector(`label[for="${field.id}"]`);
-//       if (label) {
-//           const asterisk = document.createElement('span');
-//           asterisk.className = 'required';
-//           asterisk.textContent = ' *';
-//           label.appendChild(asterisk);
-//       }
-//   });
-// }
+  function frame() {
+      if (progressBarWidth < targetWidth) {
+          progressBarWidth++;
+          progressBar.querySelector(".progress-bar").style.width = progressBarWidth + "%";
+          requestAnimationFrame(frame);
+      }
+  }
 
-// addRequiredAsterisks();
+  frame();
+}
+
+        $(document).ready(function () {
+          var progressBars = document.querySelectorAll(".progress");
+
+          progressBars.forEach(function (progressBar) {
+              $(window).on("scroll", function () {
+                  if (isScrolledIntoView(progressBar)) {
+                      animateProgressBar(progressBar);
+                      $(window).off("scroll");
+                  }
+              });
+          });
+      });
+
+      function isScrolledIntoView(element) {
+          var rect = element.getBoundingClientRect();
+          var elemTop = rect.top;
+          var elemBottom = rect.bottom;
+          return (elemTop <= window.innerHeight) && (elemBottom >= 0);
+      }
 
 function changeFontSize(value) {
   const elementsWithFontSize = document.querySelectorAll('body, p, h1, h2, h3, h4, h5, h6, a');
