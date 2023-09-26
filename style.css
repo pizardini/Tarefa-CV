@@ -104,24 +104,12 @@ address {
   font-weight: 600;
 }
 
-.idioma-texto .tooltiptext {
-  visibility: hidden;
+.idioma-texto {
   width: 120px;
-  background-color: black;
   color: #fff;
   text-align: center;
   padding: 5px 0;
   border-radius: 6px;
- 
-  position: absolute;
-  z-index: 1;
-  bottom: 100%;
-  left: 50%;
-  margin-left: -60px;
-}
-
-.idioma-texto:hover .tooltiptext {
-  visibility: visible;
 }
 
 .layouts {
@@ -398,84 +386,3 @@ background-color: #fff;
     }
     
   }
-
-  /* Formulário */
-.form {
-  margin-top: 50px;
-}
-
-.form label {
-  display: block;
-  font-size: 14px;
-  font-weight: 600;
-  margin-bottom: 5px;
-}
-
-.form input[type="text"],
-.form input[type="email"],
-.form textarea,
-.form input[type="file"],
-.form input[type="submit"],
-.form input[type="reset"] {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 14px;
-}
-
-.form input[type="submit"],
-.form input[type="reset"] {
-  background-color: #39383a;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  padding: 12px 20px;
-  font-weight: 600;
-  text-transform: uppercase;
-  transition: background-color 0.3s ease;
-}
-
-.form input[type="submit"]:hover,
-.form input[type="reset"]:hover {
-  background-color: #555;
-}
-
-.form input[type="file"] {
-  padding: 5px;
-  background-color: #f1f1f1;
-}
-
-.form span {
-  color: red;
-  font-weight: bold;
-}
-
-.form label,
-.form input,
-.form textarea {
-  display: block;
-}
-
-
-.form textarea {
-  resize: vertical;
-}
-
-
-.form .error-message {
-  color: red;
-  font-size: 12px;
-}
-
-.buttons {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.buttons input[type="submit"],
-.buttons input[type="reset"] {
-  flex-basis: 48%;
-}
