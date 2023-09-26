@@ -272,6 +272,9 @@ background-color: #fff;
   /* display: flex; */
   justify-content: space-between;
 }
+.progress-bar {
+  background-color: #39383a !important;
+}
   
   @media (max-width: 1024px) {
     .container {
